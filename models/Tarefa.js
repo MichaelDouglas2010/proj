@@ -12,11 +12,11 @@ const Tarefa = db.define('tarefa',{
         allowNull: false
     },
     dataInicio: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false
     },
     dataFim: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false
     }
 })
