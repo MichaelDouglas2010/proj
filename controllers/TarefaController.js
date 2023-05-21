@@ -30,13 +30,13 @@ class TarefaController {
     }    
 
     static async createTarefa(req,res){
-        const {nome, email, telefone} = req.body // req.body.nome, req.body.email ...
-        if(!nome || !email || !telefone){
+        const {nome, dataInicio, dataFim} = req.body // req.body.nome, req.body.email ...
+        if(!nome || !dataInicio || !dataFim){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const createdTarefa = await Tarefa.create({nome,email,telefone}) //req.body
+        const createdTarefa = await Tarefa.create({nome,dataInicio,dataFim}) //req.body
         res.status(201).json(createdTarefa)
     }
 
@@ -48,13 +48,13 @@ class TarefaController {
             return
         }
         
-        const {nome, email, telefone} = req.body // req.body.nome, req.body.email ...
-        if(!nome || !email || !telefone){
+        const {nome, dataInicio, dataFim} = req.body // req.body.nome, req.body.email ...
+        if(!nome || !dataInicio || !dataFim){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const updatedTarefa = await Tarefa.update({nome,email,telefone},{where: {id: tarefa.id}})
+        const updatedTarefa = await Tarefa.update({nome,dataInicio,dataFim},{where: {id: tarefa.id}})
         res.json(updatedTarefa)
     }
 }

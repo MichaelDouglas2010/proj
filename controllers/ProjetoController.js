@@ -30,13 +30,13 @@ class ProjetoController {
     }    
 
     static async createProjeto(req,res){
-        const {nome, email, telefone} = req.body // req.body.nome, req.body.email ...
-        if(!nome || !email || !telefone){
+        const {nome,local} = req.body // req.body.nome, req.body.email ...
+        if(!nome || !local){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const createdProjeto = await Projeto.create({nome,email,telefone}) //req.body
+        const createdProjeto = await Projeto.create({nome,local}) //req.body
         res.status(201).json(createdProjeto)
     }
 
@@ -48,13 +48,13 @@ class ProjetoController {
             return
         }
         
-        const {nome, email, telefone} = req.body // req.body.nome, req.body.email ...
-        if(!nome || !email || !telefone){
+        const {nome,local} = req.body // req.body.nome, req.body.email ...
+        if(!nome ||!local){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const updatedProjeto = await Projeto.update({nome,email,telefone},{where: {id: projeto.id}})
+        const updatedProjeto = await Projeto.update({nome,local},{where: {id: projeto.id}})
         res.json(updatedProjeto)
     }
 }

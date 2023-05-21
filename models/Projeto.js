@@ -11,11 +11,7 @@ const Projeto = db.define('projeto',{
         type: Sequelize.STRING,
         allowNull: false
     },
-    tipo: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    localizacao: {
+    local: {
         type: Sequelize.STRING,
         allowNull: false
     }

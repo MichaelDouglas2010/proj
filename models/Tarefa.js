@@ -11,12 +11,12 @@ const Tarefa = db.define('tarefa',{
         type: Sequelize.STRING,
         allowNull: false
     },
-    email: {
-        type: Sequelize.STRING,
+    dataInicio: {
+        type: Sequelize.DATEONLY,
         allowNull: false
     },
-    telefone: {
-        type: Sequelize.STRING,
+    dataFim: {
+        type: Sequelize.DATEONLY,
         allowNull: false
     }
 })
