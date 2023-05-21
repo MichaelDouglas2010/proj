@@ -4,6 +4,7 @@ const db = new Sequelize(
     "database",
     "user",
     "passw",
+
     {
         dialect: "sqlite",
         storage: './db.sqlite'
