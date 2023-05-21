@@ -15,7 +15,7 @@ const Projeto = db.define('projeto',{
         type: Sequelize.STRING,
         allowNull: false
     },
-    localizacao: {
+    telefone: {
         type: Sequelize.STRING,
         allowNull: false
     }
