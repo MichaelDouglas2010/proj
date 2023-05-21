@@ -30,13 +30,13 @@ class UsuarioController {
     }    
 
     static async createUsuario(req,res){
-        const {nome, email, telefone} = req.body // req.body.nome, req.body.email ...
-        if(!nome || !email || !telefone){
+        const {nome, email, telefone,tipo} = req.body // req.body.nome, req.body.email ...
+        if(!nome || !email || !telefone || !tipo){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const createdUsuario = await Usuario.create({nome,email,telefone}) //req.body
+        const createdUsuario = await Usuario.create({nome,email,telefone,tipo}) //req.body
         res.status(201).json(createdUsuario)
     }
 
@@ -48,13 +48,13 @@ class UsuarioController {
             return
         }
         
-        const {nome, email, telefone} = req.body // req.body.nome, req.body.email ...
-        if(!nome || !email || !telefone){
+        const {nome, email, telefone,tipo} = req.body // req.body.nome, req.body.email ...
+        if(!nome || !email || !telefone || !tipo){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const updatedUsuario = await Usuario.update({nome,email,telefone},{where: {id: usuario.id}})
+        const updatedUsuario = await Usuario.update({nome,email,telefone,tipo},{where: {id: usuario.id}})
         res.json(updatedUsuario)
     }
 }

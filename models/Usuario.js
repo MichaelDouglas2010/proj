@@ -18,6 +18,10 @@ const Usuario = db.define('usuario',{
     telefone: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    tipo: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
     }
 })
 
